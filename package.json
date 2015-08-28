@@ -1,6 +1,6 @@
 {
   "name": "express-react",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "middleware to render react components with express and optionally mount on the client",
   "main": "index.js",
   "license": "MIT",
