@@ -18,12 +18,15 @@ module.exports = function(options){
 	return function middleware(req, res, next) {
 		res.document = { doctype:'html' }
 		res.render = createServerRenderer(req, res, next, options)
+		res.props = {}
 		next()
 	}
 }
 	
 function createServerRenderer(req, res, next, options) {
 	return function render(Component, props) {
+		props = assign({}, res.props, props || {})
+
 		var element = React.createElement(Component, props)
 
 		res.document.scripts = res.document.scripts || []
